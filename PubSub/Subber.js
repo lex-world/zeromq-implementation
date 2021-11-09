@@ -4,9 +4,9 @@
 var zmq = require("zeromq"),
   sock = zmq.socket("sub");
 
-  /**
-   * * @dev Make sure you're connected to right tcp address
-   */
+/**
+ * * @dev Make sure you're connected to right tcp address
+ */
 sock.connect("tcp://127.0.0.1:3000");
 /**
  * @dev
@@ -20,5 +20,5 @@ sock.on("message", (topic, message) => {
   /**
    * @dev the topic and message is strigified since TCP transfers buffers i.e. either 0 or 1
    */
-  console.log(`Channel: ${topic.toString()}\n Messsage: ${message.toString()}`);
+  console.log(`Channel: ${topic.toString()}\nMesssage: ${message.toString()}`);
 });
